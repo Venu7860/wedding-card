@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wedding Wishes</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;
+    }
+
+    /* 💖 Card */
+    .card {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        text-align: center;
+        max-width: 500px;
+        animation: fadeIn 2s ease-in-out;
+        position: relative;
+        z-index: 2;
+    }
+
+    h1 {
+        color: #e91e63;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-size: 26px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .footer {
+        margin-top: 30px;
+        font-weight: bold;
+        color: #e91e63;
+    }
+
+    /* ✨ Floating hearts */
+    .heart {
+        position: absolute;
+        bottom: -50px;
+        font-size: 24px;
+        animation: floatUp linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+        from {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        to {
+            transform: translateY(-110vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💖 Wedding Card -->
+<div class="card">
+    <h1>💖 Wedding Wishes 💖</h1>
+    
+    <div class="name">Dear Vidya,</div>
+
+    <div class="message">
+        Congratulations on your wedding on <b>27th February</b>!<br><br>
+        May your life together be filled with:<br><br>
+        ❤️ Love<br>
+        😊 Joy<br>
+        🤝 Understanding<br>
+        ✨ Endless Happiness<br><br>
+        Wishing you a beautiful journey ahead!
+    </div>
+
+    <div class="footer">
+        Best Wishes,<br>
+        Sandip
+    </div>
+</div>
+
+<!-- 💕 Floating Hearts Script -->
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+}
+
+setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
